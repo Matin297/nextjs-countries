@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import clsx from "clsx";
 import { nunito } from "@/app/ui/fonts";
 
 import TopNav from "@/app/ui/top-nav";
@@ -17,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className}>
-        <header className="shadow mb-8">
+      <body className={clsx(nunito.className, "bg-slate-50")}>
+        <header className="shadow mb-8 bg-white">
           <TopNav />
         </header>
         {children}
