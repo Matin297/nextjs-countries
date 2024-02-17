@@ -7,7 +7,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        "auto-fill": "repeat(auto-fill, minmax(300px, 1fr))",
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };
