@@ -10,7 +10,10 @@ export default function FilterForm() {
           className="rounded w-full pl-10 py-3 bg-transparent border-0 placeholder:text-sm"
         />
       </div>
-      <select defaultValue="" className="shadow rounded p-3 pr-12 border-0">
+      <select
+        defaultValue=""
+        className="shadow rounded p-3 pr-12 border-0 text-sm"
+      >
         <option disabled value="">
           Filter by region
         </option>
