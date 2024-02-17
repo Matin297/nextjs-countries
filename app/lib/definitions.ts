@@ -1,3 +1,8 @@
+export type Region = {
+  id: number;
+  name: string;
+};
+
 export type Country = {
   name: string;
   topLevelDomain: string[];
@@ -7,7 +12,7 @@ export type Country = {
   capital: string;
   altSpellings: string[];
   subregion: string;
-  region: string;
+  region_id: number;
   population: number;
   latlng: [number, number];
   demonym: string;
