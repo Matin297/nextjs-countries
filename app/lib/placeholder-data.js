@@ -1,4 +1,4 @@
-export const regions = [
+const regions = [
   {
     id: 1,
     name: "Asia",
@@ -29,7 +29,7 @@ export const regions = [
   },
 ];
 
-export const countries = [
+const countries = [
   {
     name: "Afghanistan",
     topLevelDomain: [".af"],
@@ -6687,7 +6687,7 @@ export const countries = [
     callingCodes: ["672"],
     altSpellings: ["HM"],
     subregion: "Antarctic",
-    region_id: "Antarctic",
+    region_id: regions[6].id,
     population: 0,
     latlng: [-53.1, 72.51666666],
     demonym: "Heard and McDonald Islander",
@@ -16821,3 +16821,8 @@ export const countries = [
     independent: true,
   },
 ];
+
+module.exports = {
+  regions,
+  countries,
+};

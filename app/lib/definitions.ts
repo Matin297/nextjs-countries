@@ -4,21 +4,16 @@ export type Region = {
 };
 
 export type Country = {
+  id: string;
   name: string;
-  topLevelDomain: string[];
   alpha2Code: string;
   alpha3Code: string;
-  callingCodes: string[];
   capital: string;
-  altSpellings: string[];
   subregion: string;
   region_id: number;
   population: number;
-  latlng: [number, number];
   demonym: string;
   area: number;
-  timezones: string[];
-  borders: string[];
   nativeName: string;
   numericCode: string;
   flag: string;
@@ -26,6 +21,12 @@ export type Country = {
   independent: boolean;
   flags: Flags;
   translations: Translations;
+  borders: string[];
+  timezones: string[];
+  latlng: [number, number];
+  altSpellings: string[];
+  callingCodes: string[];
+  topLevelDomain: string[];
   currencies: Currency[];
   languages: Language[];
   regionalBlocs: Bloc[];
