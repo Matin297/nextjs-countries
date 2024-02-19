@@ -3,6 +3,15 @@ export type Region = {
   name: string;
 };
 
+export type CountrySummary = {
+  id: string;
+  name: string;
+  region: string;
+  capital: string;
+  population: number;
+  flag: string;
+};
+
 export type Country = {
   id: string;
   name: string;
