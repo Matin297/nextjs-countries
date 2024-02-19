@@ -1,10 +1,14 @@
 import FilterForm from "./ui/home/filter-form";
 import CountriesGrid from "./ui/home/countries-grid";
 
-export default function Page() {
+import { fetchRegions } from "@/app/lib/data";
+
+export default async function Page() {
+  const regions = await fetchRegions();
+
   return (
     <main className="px-8 pb-8 md:px-16">
-      <FilterForm />
+      <FilterForm regions={regions} />
       <CountriesGrid />
     </main>
   );

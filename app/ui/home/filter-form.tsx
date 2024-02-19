@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { Region } from "@/app/lib/definitions";
 
-export default function FilterForm() {
+export default function FilterForm({ regions }: { regions: Region[] }) {
   return (
     <form className="my-8 flex justify-between flex-wrap gap-4">
       <div className="shadow bg-white relative rounded grow max-w-lg">
@@ -17,9 +18,11 @@ export default function FilterForm() {
         <option disabled value="">
           Filter by region
         </option>
-        <option>Asia</option>
-        <option>America</option>
-        <option>Europe</option>
+        {regions.map((region) => (
+          <option key={region.id} value={region.name}>
+            {region.name}
+          </option>
+        ))}
       </select>
     </form>
   );
