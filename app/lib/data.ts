@@ -11,7 +11,7 @@ export async function fetchRegions() {
   }
 }
 
-export async function fetchCountries(query: string) {
+export async function fetchCountries(query: string, region: string) {
   try {
     const data = await sql<CountrySummary>`
         SELECT
@@ -24,9 +24,12 @@ export async function fetchCountries(query: string) {
         FROM countries
         JOIN regions ON regions.id = countries.region_id
         WHERE
-          capital ILIKE ${`%${query}%`} OR
-          countries.name ILIKE ${`%${query}%`} OR
-          regions.name ILIKE ${`%${query}%`}
+          (
+            capital ILIKE ${`%${query}%`} OR
+            countries.name ILIKE ${`%${query}%`} OR
+            regions.name ILIKE ${`%${query}%`}
+          ) AND
+          regions.name ILIKE ${`%${region}%`}
       `;
 
     return data.rows;
