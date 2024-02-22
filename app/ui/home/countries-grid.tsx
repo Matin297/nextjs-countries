@@ -3,8 +3,14 @@ import Image from "next/image";
 
 import { fetchCountries } from "@/app/lib/data";
 
-export default async function CountriesGrid({ query }: { query: string }) {
-  const countries = await fetchCountries(query);
+export default async function CountriesGrid({
+  query,
+  region,
+}: {
+  query: string;
+  region: string;
+}) {
+  const countries = await fetchCountries(query, region);
 
   return (
     <ul className="grid grid-cols-auto-fill gap-12">

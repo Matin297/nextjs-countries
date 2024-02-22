@@ -11,9 +11,11 @@ export default async function Page({
 }: {
   searchParams?: {
     query?: string;
+    region?: string;
   };
 }) {
   const query = searchParams?.query || "";
+  const region = searchParams?.region || "";
 
   const regions = await fetchRegions();
 
@@ -24,7 +26,7 @@ export default async function Page({
         <Filter regions={regions} />
       </div>
       <Suspense key={query} fallback={<CountriesSkeleton />}>
-        <CountriesGrid query={query} />
+        <CountriesGrid query={query} region={region} />
       </Suspense>
     </main>
   );
