@@ -1,16 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { CountrySummary } from "@/app/lib/definitions";
+import { fetchCountries } from "@/app/lib/data";
 
-export default function CountriesGrid({
-  countries,
-}: {
-  countries: CountrySummary[];
-}) {
+export default async function CountriesGrid({ query }: { query: string }) {
+  const countries = await fetchCountries(query);
+
   return (
     <ul className="grid grid-cols-auto-fill gap-12">
-      {countries.map((country) => (
+      {countries?.map((country) => (
         <li
           className="rounded shadow overflow-hidden bg-white"
           key={country.id}
