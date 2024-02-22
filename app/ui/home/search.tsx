@@ -1,6 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useDebouncedCallback } from "use-debounce";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 export default function Search() {
@@ -8,7 +9,7 @@ export default function Search() {
   const { replace } = useRouter();
   const searchParams = useSearchParams();
 
-  function handleChange(term: string) {
+  const handleChange = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
 
     if (term) {
@@ -18,7 +19,7 @@ export default function Search() {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  }
+  }, 300);
 
   return (
     <div className="shadow bg-white relative rounded grow max-w-lg">
