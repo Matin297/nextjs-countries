@@ -12,6 +12,20 @@ export type CountrySummary = {
   flag: string;
 };
 
+export type CountryDetails = {
+  id: string;
+  name: string;
+  region: string;
+  capital: string;
+  population: number;
+  flag: string;
+  nativename: string;
+  subregion: string;
+  topleveldomain: string[];
+  currencies: Currency[];
+  languages: Language[];
+};
+
 export type Country = {
   id: string;
   name: string;
@@ -23,7 +37,7 @@ export type Country = {
   population: number;
   demonym: string;
   area: number;
-  nativeName: string;
+  nativename: string;
   numericCode: string;
   flag: string;
   cioc: string;
@@ -35,7 +49,7 @@ export type Country = {
   latlng: [number, number];
   altSpellings: string[];
   callingCodes: string[];
-  topLevelDomain: string[];
+  topleveldomain: string[];
   currencies: Currency[];
   languages: Language[];
   regionalBlocs: Bloc[];
@@ -51,7 +65,7 @@ type Language = {
   iso639_1: string;
   iso639_2: string;
   name: string;
-  nativeName: string;
+  nativename: string;
 };
 
 type Flags = {
