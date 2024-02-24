@@ -1,5 +1,10 @@
 import { sql } from "@vercel/postgres";
-import { Region, CountrySummary, CountryDetails } from "@/app/lib/definitions";
+import {
+  Region,
+  CountrySummary,
+  CountryDetails,
+  Border,
+} from "@/app/lib/definitions";
 
 export async function fetchRegions() {
   try {
@@ -60,6 +65,20 @@ export async function fetchCountryById(id: string) {
       WHERE countries.id = ${id}
     `;
     return data.rows[0];
+  } catch (error) {
+    console.error("Database error:", error);
+    throw new Error("Failed to fetch country data.");
+  }
+}
+
+export async function fetchCountryBorders(id: string) {
+  try {
+    const data = await sql<Border>`
+      SELECT name, id FROM countries WHERE (
+        SELECT borders FROM countries WHERE id = ${id}
+      )::jsonb ? alpha3code 
+    `;
+    return data.rows;
   } catch (error) {
     console.error("Database error:", error);
     throw new Error("Failed to fetch country data.");
