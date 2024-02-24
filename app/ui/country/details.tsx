@@ -12,8 +12,6 @@ export default function Details({ country }: { country: CountryDetails }) {
     languages,
   } = country;
 
-  console.log(country);
-
   return (
     <div className="flex justify-between flex-col flex-wrap gap-8 mt-4 mb-8 md:flex-row text-sm">
       <div>
