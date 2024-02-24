@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import Details from "@/app/ui/country/details";
+import Borders from "@/app/ui/country/borders";
 import { fetchCountryById } from "@/app/lib/data";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div className="grow">
           <h2 className="font-extrabold text-xl">{country.name}</h2>
           <Details country={country} />
+          <Borders countryId={params.id} />
         </div>
       </section>
     </main>
