@@ -55,6 +55,11 @@ export type Country = {
   regionalBlocs: Bloc[];
 };
 
+export type Border = {
+  id: string;
+  name: string;
+};
+
 type Currency = {
   code: string;
   name: string;
