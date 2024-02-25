@@ -18,7 +18,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <span>Back</span>
       </Link>
 
-      <section className="flex flex-col gap-10 md:flex-row md:gap-16">
+      <section className="flex flex-col gap-10 md:flex-row md:gap-24">
         <Image
           className="h-[300px] object-cover"
           src={country.flag}
