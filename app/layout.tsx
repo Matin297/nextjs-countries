@@ -18,8 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(nunito.className, "bg-slate-50")}>
-        <header className="shadow bg-white">
+      <body
+        className={clsx(
+          nunito.className,
+          "bg-gray-100 dark:bg-gray-800 dark:text-white"
+        )}
+      >
+        <header className="shadow bg-white dark:bg-gray-700">
           <TopNav />
         </header>
         {children}
