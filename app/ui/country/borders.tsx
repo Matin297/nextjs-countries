@@ -9,7 +9,7 @@ export default async function Borders({ countryId }: { countryId: string }) {
       <span className="font-semibold whitespace-nowrap">Border Countries:</span>
       <ul className="flex flex-wrap gap-2">
         {borders.map(({ name, id }) => (
-          <li key={id} className="bg-white shadow rounded p-1">
+          <li key={id} className="bg-white shadow rounded p-1 dark:bg-gray-700">
             <Link href={`/country/${id}`}>{name}</Link>
           </li>
         ))}

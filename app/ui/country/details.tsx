@@ -17,23 +17,25 @@ export default function Details({ country }: { country: CountryDetails }) {
       <div>
         <div className="mb-2">
           <span className="font-semibold mr-1">Native Name:</span>
-          <span className="capitalize">{nativename}</span>
+          <span className="capitalize dark:text-slate-300">{nativename}</span>
         </div>
         <div className="mb-2">
           <span className="font-semibold mr-1">Population:</span>
-          <span className="capitalize">{population.toLocaleString()}</span>
+          <span className="capitalize dark:text-slate-300">
+            {population.toLocaleString()}
+          </span>
         </div>
         <div className="mb-2">
           <span className="font-semibold mr-1">Region:</span>
-          <span className="capitalize">{region}</span>
+          <span className="capitalize dark:text-slate-300">{region}</span>
         </div>
         <div className="mb-2">
           <span className="font-semibold mr-1">Sub Region:</span>
-          <span className="capitalize">{subregion}</span>
+          <span className="capitalize dark:text-slate-300">{subregion}</span>
         </div>
         <div>
           <span className="font-semibold mr-1">Capital:</span>
-          <span className="capitalize">{capital}</span>
+          <span className="capitalize dark:text-slate-300">{capital}</span>
         </div>
       </div>
 
