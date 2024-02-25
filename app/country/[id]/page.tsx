@@ -12,7 +12,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     <main className="py-8 px-6 md:px-16 md:py-12 max-w-6xl">
       <Link
         href="/"
-        className="mb-16 py-2 px-6 inline-flex items-center gap-2 shadow rounded text-sm bg-white"
+        className="mb-16 py-2 px-6 inline-flex items-center gap-2 shadow rounded text-sm bg-white dark:bg-gray-700"
       >
         <ArrowLeftIcon className="h-4 w-4" />
         <span>Back</span>
