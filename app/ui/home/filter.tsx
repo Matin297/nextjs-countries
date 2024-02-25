@@ -23,7 +23,7 @@ export default function Filter({ regions }: { regions: Region[] }) {
   return (
     <select
       defaultValue={searchParams.get("region") || ""}
-      className="shadow rounded p-3 pr-12 border-0 text-sm"
+      className="shadow rounded p-3 pr-12 border-0 text-sm dark:bg-gray-700"
       onChange={(e) => handleChange(e.target.value)}
     >
       <option disabled value="">

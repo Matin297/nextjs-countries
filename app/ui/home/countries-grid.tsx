@@ -16,7 +16,7 @@ export default async function CountriesGrid({
     <ul className="grid grid-cols-auto-fill gap-12">
       {countries?.map((country) => (
         <li
-          className="rounded shadow overflow-hidden bg-white"
+          className="rounded shadow overflow-hidden bg-white dark:bg-gray-700"
           key={country.id}
         >
           <Link href={`/country/${country.id}`}>
@@ -33,17 +33,21 @@ export default async function CountriesGrid({
 
               <div>
                 <span className="font-semibold mr-2">Population:</span>
-                <span className="text-gray-500">
+                <span className="text-slate-500 dark:text-slate-300">
                   {country.population.toLocaleString()}
                 </span>
               </div>
               <div>
                 <span className="font-semibold mr-2">Region:</span>
-                <span className="text-gray-500">{country.region}</span>
+                <span className="text-slate-500 dark:text-slate-300">
+                  {country.region}
+                </span>
               </div>
               <div>
                 <span className="font-semibold mr-2">Capital:</span>
-                <span className="text-gray-500">{country.capital}</span>
+                <span className="text-slate-500 dark:text-slate-300">
+                  {country.capital}
+                </span>
               </div>
             </section>
           </Link>

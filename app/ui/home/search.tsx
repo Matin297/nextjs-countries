@@ -23,12 +23,12 @@ export default function Search() {
 
   return (
     <div className="shadow bg-white relative rounded grow max-w-lg">
-      <MagnifyingGlassIcon className="pointer-events-none h-4 w-4 absolute top-1/2 left-3 -translate-y-1/2 text-slate-500" />
+      <MagnifyingGlassIcon className="pointer-events-none h-4 w-4 absolute top-1/2 left-3 -translate-y-1/2 text-slate-500 dark:text-white" />
       <input
         defaultValue={searchParams.get("query") || ""}
         onChange={(e) => handleChange(e.target.value)}
         placeholder="search for a country..."
-        className="rounded w-full pl-10 py-3 bg-transparent border-0 placeholder:text-sm"
+        className="rounded w-full pl-10 py-3 bg-transparent border-0 placeholder:text-sm dark:placeholder:text-white dark:bg-gray-700"
       />
     </div>
   );
