@@ -21,7 +21,7 @@ export default async function CountriesGrid({
         >
           <Link href={`/country/${country.id}`}>
             <Image
-              className="w-full"
+              className="w-full h-[180px] object-cover"
               src={country.flag}
               alt={`${country.name} flag`}
               width={300}
