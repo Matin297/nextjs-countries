@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import clsx from "clsx";
 import { nunito } from "@/app/ui/fonts";
 
+import AppThemeProvider from "@/app/providers";
 import TopNav from "@/app/ui/top-nav";
 
 export const metadata: Metadata = {
@@ -24,10 +25,10 @@ export default function RootLayout({
           "bg-gray-100 dark:bg-gray-800 dark:text-white"
         )}
       >
-        <header className="shadow bg-white dark:bg-gray-700">
+        <AppThemeProvider>
           <TopNav />
-        </header>
-        {children}
+          {children}
+        </AppThemeProvider>
       </body>
     </html>
   );
